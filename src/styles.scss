@@ -1,0 +1,113 @@
+$default-bg: rgb(235, 235, 235);
+$primary: #4766ff;
+
+.screen {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 100vh;
+	background-color: $default-bg;
+}
+
+#login {
+	display: flex;
+	align-items: center;
+	background-color: white;
+	width: 700px;
+	min-height: 500px;
+	border-radius: 3px;
+	overflow: hidden;
+
+	position: relative;
+
+	.panel {
+		text-align: center;
+		padding: 24px;
+		width: 50%;
+	}
+
+	.super {
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+
+		position: absolute;
+		background: rgb(53, 130, 232);
+		background: linear-gradient(180deg, rgba(53, 130, 232, 1) 0%, rgba(71, 102, 255, 1) 100%);
+		width: 50%;
+		height: 100%;
+		transform: translateX(0%);
+		transition: transform 1s;
+
+		color: white;
+		text-align: center;
+
+		.register-blurb {
+			min-width: 100%;
+			transform: translateX(1000px);
+			transition: transform 1s;
+		}
+
+		.login-blurb {
+			min-width: 100%;
+			transform: translateX(-100%);
+			transition: transform 1s;
+		}
+
+		button {
+			font-size: 1em;
+			outline: none;
+			border: 2px solid white;
+			background-color: transparent;
+			padding: 12px;
+			min-width: 180px;
+			border-radius: 100px;
+			color: white;
+			transition: background-color 0.3s, color 0.3s;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: white;
+			color: $primary;
+		}
+
+		button:active {
+			background-color: transparent;
+			color: white;
+		}
+	}
+
+	.right {
+		transform: translateX(100%);
+		.register-blurb {
+			transform: translateX(0px);
+		}
+		.login-blurb {
+			transform: translateX(-1000px);
+		}
+	}
+
+	form {
+		input[type="text"] {
+			font-size: 0.8em;
+			outline: none;
+			border: none;
+			background-color: $default-bg;
+			padding: 12px 12px;
+			margin-bottom: 12px;
+		}
+
+		button[type="submit"] {
+			font-size: 1em;
+			outline: none;
+			border: 2px solid $primary;
+			background-color: $primary;
+			padding: 12px;
+			min-width: 180px;
+			border-radius: 100px;
+			color: white;
+		}
+	}
+}
